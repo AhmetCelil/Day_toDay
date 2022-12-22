@@ -7,5 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="genel"> #3333ff</color>
+    <color name="turuncu">#F6744B</color>
+    <color name="butonRengi">#FFE608</color>
 </resources>
