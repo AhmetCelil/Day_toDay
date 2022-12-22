@@ -12,10 +12,15 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity{
     Button kayitButonu, girisButonu;
     Button adminGirisButonu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Kullanici muhammed = new Kullanici("mami", "yalman", "zekikurt", "zekikurt@gmail.com","05356131057");
+
+
 
         girisButonu = findViewById(R.id.ana_giris_yap);
         kayitButonu = findViewById(R.id.kayıt_ol);
@@ -62,5 +67,6 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(MainActivity.this , AdminEkarani.class));
             }
         });
+
     }
 }
