@@ -20,30 +20,30 @@ public class GenelBilgiler extends AppCompatActivity {
 
 
 // alınacak inputlar
-        final EditText yas = findViewById(R.id.girilen_yas);
-        final EditText boy = findViewById(R.id.girilen_boy);
-        final EditText kilo = findViewById(R.id.girilen_kilo);
+        EditText yas = findViewById(R.id.girilen_yas);
+        EditText boy = findViewById(R.id.girilen_boy);
+        EditText kilo = findViewById(R.id.girilen_kilo);
 
-        final RadioButton cinsiyet_erkek = findViewById(R.id.erkek_butonu);
-        final RadioButton cinsiyet_kadın = findViewById(R.id.kadın_butonu);
+        RadioButton cinsiyet_erkek = findViewById(R.id.erkek_butonu);
+        RadioButton cinsiyet_kadın = findViewById(R.id.kadın_butonu);
 
-        final RadioButton aktiviteDusuk = findViewById(R.id.düşük_düzey);
-        final RadioButton aktiviteOrta = findViewById(R.id.orta_düzey);
-        final RadioButton aktiviteNormal = findViewById(R.id.normal_düzey);
-        final RadioButton aktiviteAktif = findViewById(R.id.aktif_düzey);
+        RadioButton aktiviteDusuk = findViewById(R.id.düşük_düzey);
+        RadioButton aktiviteOrta = findViewById(R.id.orta_düzey);
+        RadioButton aktiviteNormal = findViewById(R.id.normal_düzey);
+        RadioButton aktiviteAktif = findViewById(R.id.aktif_düzey);
 
-        final RadioButton hedefVermek = findViewById(R.id.kilo_vermek);
-        final RadioButton hedefAlmak = findViewById(R.id.kilo_almak);
-        final RadioButton hedefSabitKal = findViewById(R.id.sabit_kalmak);
-        final RadioButton hedefKas = findViewById(R.id.kas_kütlesi);
+        RadioButton hedefVermek = findViewById(R.id.kilo_vermek);
+        RadioButton hedefAlmak = findViewById(R.id.kilo_almak);
+        RadioButton hedefSabitKal = findViewById(R.id.sabit_kalmak);
+        RadioButton hedefKas = findViewById(R.id.kas_kütlesi);
 
 //yazilacak outputlar
 
-        final EditText kalori_bari = findViewById(R.id.kalori_bari);
-        final EditText protein_bari = findViewById(R.id.protein_bari);
-        final EditText karbonhidrat_bari = findViewById(R.id.karbonhidrat_bari);
-        final EditText yag_bari = findViewById(R.id.yag_bari);
-        final EditText su_bari = findViewById(R.id.su_bari);
+         EditText kalori_bari = findViewById(R.id.kalori_bari);
+         EditText protein_bari = findViewById(R.id.protein_bari);
+         EditText karbonhidrat_bari = findViewById(R.id.karbonhidrat_bari);
+         EditText yag_bari = findViewById(R.id.yag_bari);
+         EditText su_bari = findViewById(R.id.su_bari);
 /*
         final EditText protein = findViewById(R.id.protein_bari);
         final EditText karbonhidrat = findViewById(R.id.karbonhidrat_bari);
@@ -71,22 +71,33 @@ public class GenelBilgiler extends AppCompatActivity {
                 boolean sabitKalmak = Boolean.parseBoolean(hedefSabitKal.getText().toString());
                 boolean kasYapmak = Boolean.parseBoolean(hedefKas.getText().toString());
 
+
                 double yasDouble = Double.parseDouble(girilenYas);
                 double boyDouble = Double.parseDouble(girilenBoy);
                 double kiloDouble = Double.parseDouble(girilenKilo);
-                double KaloriMiktari = 0;
+                double KaloriMiktari = 0f;
 
                 //kalori.setText(String.valueOf(yasDouble));
+/*
+                if(kiloAlmak == false && girilenErkek == false && dusuk == false){
+                    KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.1;
+                }
+                if(kiloVermek == false && girilenErkek == false && dusuk == false){
+                    KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) * 0.9;
+                }*/
 
                 if(girilenErkek == false){
                     if(dusuk == false){
-                        if(kiloAlmak == false){
+                        if(kiloAlmak == false && girilenErkek == false && dusuk == false){
                             KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.1;
-                        }else if(kiloVermek == false){
+                        }
+                        if(kiloVermek == false && girilenErkek == false && dusuk == false){
                             KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) * 0.9;
-                        }else if(sabitKalmak == false){
+                        }
+                        if(sabitKalmak == false){
                             KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble));
-                        }else if(kasYapmak == false){
+                        }
+                        if(kasYapmak == false){
                             KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.05;
                         }
                         //KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble));
@@ -94,11 +105,14 @@ public class GenelBilgiler extends AppCompatActivity {
                     if(orta == false){
                         if(kiloAlmak == false){
                             KaloriMiktari = 1.3 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.1;
-                        }else if(kiloVermek == false){
+                        }
+                        if(kiloVermek == false){
                             KaloriMiktari = 1.3 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) * 0.9;
-                        }else if(sabitKalmak == false){
+                        }
+                        if(sabitKalmak == false){
                             KaloriMiktari = 1.3 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble));
-                        }else if(kasYapmak == false){
+                        }
+                        if(kasYapmak == false){
                             KaloriMiktari = 1.3 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.05;
                         }
                         //KaloriMiktari = 1.3 * (66.5 +(13.75 * kiloDouble) + (5 * boyDouble) - (6.77* yasDouble));
@@ -106,11 +120,14 @@ public class GenelBilgiler extends AppCompatActivity {
                     if(normal == false){
                         if(kiloAlmak == false){
                             KaloriMiktari = 1.4 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.1;
-                        }else if(kiloVermek == false){
+                        }
+                        if(kiloVermek == false){
                             KaloriMiktari = 1.4 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) * 0.9;
-                        }else if(sabitKalmak == false){
+                        }
+                        if(sabitKalmak == false){
                             KaloriMiktari = 1.4 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble));
-                        }else if(kasYapmak == false){
+                        }
+                        if(kasYapmak == false){
                             KaloriMiktari = 1.4 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.05;
                         }
 
@@ -119,30 +136,106 @@ public class GenelBilgiler extends AppCompatActivity {
                     if(yuksek == false){
                         if(kiloAlmak == false){
                             KaloriMiktari = 1.5 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.1;
-                        }else if(kiloVermek == false){
+                        }
+                        if(kiloVermek == false){
                             KaloriMiktari = 1.5 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) * 0.9;
-                        }else if(sabitKalmak == false){
+                        }
+                        if(sabitKalmak == false){
                             KaloriMiktari = 1.5 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble));
-                        }else if(kasYapmak == false){
+                        }
+                        if(kasYapmak == false){
                             KaloriMiktari = 1.5 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble)) *1.05;
                         }
                         //KaloriMiktari = (1.5 * ((66.5) + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77* yasDouble)));
                     }
                 }
+                if(girilenKadin == false){
+                    if(dusuk == false){
+                        if(kiloAlmak == false){
+                            KaloriMiktari = 1.2 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.1;
+                        }
+                        if(kiloVermek == false){
+                            KaloriMiktari = 1.2 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *0.9;
+                        }
+                        if(sabitKalmak == false){
+                            KaloriMiktari = 1.2 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble));
+                        }
+                        if(kasYapmak == false){
+                            KaloriMiktari = 1.2 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.05;
+                        }
+                        //KaloriMiktari = 1.2 * (66.5 + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77 * yasDouble));
+                    }
+                    if(orta == false){
+                        if(kiloAlmak == false){
+                            KaloriMiktari = 1.3 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.1;
+                        }
+                        if(kiloVermek == false){
+                            KaloriMiktari = 1.3 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *0.9;
+                        }
+                        if(sabitKalmak == false){
+                            KaloriMiktari = 1.3 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble));
+                        }
+                        if(kasYapmak == false){
+                            KaloriMiktari = 1.2 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.05;
+                        }
+                        //KaloriMiktari = 1.3 * (66.5 +(13.75 * kiloDouble) + (5 * boyDouble) - (6.77* yasDouble));
+                    }
+                    if(normal == false){
+                        if(kiloAlmak == false){
+                            KaloriMiktari = 1.4 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.1;
+                        }
+                        if(kiloVermek == false){
+                            KaloriMiktari = 1.4 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *0.9;
+                        }
+                        if(sabitKalmak == false){
+                            KaloriMiktari = 1.4 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble));
+                        }
+                        if(kasYapmak == false){
+                            KaloriMiktari = 1.4 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.05;
+                        }
 
-                double karbonhidratMiktarı = KaloriMiktari * 0.055;
+                        //KaloriMiktari = 1.4 * (66.5 +(13.75 * kiloDouble) + (5 * boyDouble) - (6.77* yasDouble));
+                    }
+                    if(yuksek == false){
+                        if(kiloAlmak == false){
+                            KaloriMiktari = 1.5 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.1;
+                        }
+                        if(kiloVermek == false){
+                            KaloriMiktari = 1.5 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) * 0.9;
+                        }
+                        if(sabitKalmak == false){
+                            KaloriMiktari = 1.5 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble));
+                        }
+                        if(kasYapmak == false){
+                            KaloriMiktari = 1.5 * (655.1 + (9.56 * kiloDouble) + (1.85 * boyDouble) - (4.67 * yasDouble)) *1.05;
+                        }
+                        //KaloriMiktari = (1.5 * ((66.5) + (13.75 * kiloDouble) + (5 * boyDouble) - (6.77* yasDouble)));
+                    }
+                }
 
-                
+                double karbonhidratMiktari = KaloriMiktari * 0.055;
+                double proteinMiktari = KaloriMiktari * 0.15 / 4.184;
+                double yagMiktari = KaloriMiktari * 0.15 /4.184;
+                double suMiktari = kiloDouble * 0.033;
                 /*else if(girilenKadin){
 
                 }*/
                 //String girilenErkekStr = String.valueOf(girilenErkek);
                 String kaloriStr = String.valueOf(KaloriMiktari);
-                String karbonhidratStr = String.valueOf(karbonhidratMiktarı);
+                String karbonhidratStr = String.valueOf(karbonhidratMiktari);
+                String proteinStr = String.valueOf(proteinMiktari);
+                String yagStr = String.valueOf(yagMiktari);
+                String suStr = String.valueOf(suMiktari);
+                String str = String.valueOf(kiloAlmak);
 
+                su_bari.setText(suStr);
+                yag_bari.setText(yagStr);
+                protein_bari.setText(proteinStr);
                 karbonhidrat_bari.setText(karbonhidratStr);
                 kalori_bari.setText(kaloriStr);
                 //yag.setText(girilenYas+ "  "+ girilenErkek);
+
+                KaloriMiktari = 0;
 
             }
         });
