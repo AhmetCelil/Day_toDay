@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "478589945803",
+    "project_id": "daytoday-a1dd3",
+    "storage_bucket": "daytoday-a1dd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478589945803:android:56271f5cc0029989a2984e",
+        "android_client_info": {
+          "package_name": "com.example.day_today2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478589945803-rvcklb5h5kq2ck2818lpg6s0rolsakh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiz_9xPdokk76OiJJ55lc4b6gz26pYEcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478589945803-rvcklb5h5kq2ck2818lpg6s0rolsakh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

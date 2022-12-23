@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="turuncu">#F6744B</color>
     <color name="butonRengi">#FFE608</color>
+    <color name="buttonColor">#FF948BB6</color>
 </resources>

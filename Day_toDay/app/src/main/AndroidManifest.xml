@@ -27,14 +27,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".IdmanGor"
+            android:name=".KayitEkrani"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AdminEkarani"
+            android:name=".AdminEkrani"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

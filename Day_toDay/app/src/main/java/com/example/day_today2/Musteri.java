@@ -10,11 +10,11 @@ class Musteri extends Kullanici{
 
     public int ucretCagir(){
         int ucret = 0;
-
+/*
         switch(){
 
         }
-
+*/
         return ucret;
     }
 
