@@ -215,24 +215,28 @@ public class GenelBilgiler extends AppCompatActivity {
 
                 double karbonhidratMiktari = KaloriMiktari * 0.055;
                 double proteinMiktari = KaloriMiktari * 0.15 / 4.184;
-                double yagMiktari = KaloriMiktari * 0.15 /4.184;
+                double yagMiktari = KaloriMiktari * 0.15 / 4.184;
                 double suMiktari = kiloDouble * 0.033;
+
+                suMiktari = Math.rint(suMiktari * 100) / 100;
+
+
                 /*else if(girilenKadin){
 
                 }*/
                 //String girilenErkekStr = String.valueOf(girilenErkek);
-                String kaloriStr = String.valueOf(KaloriMiktari);
-                String karbonhidratStr = String.valueOf(karbonhidratMiktari);
-                String proteinStr = String.valueOf(proteinMiktari);
-                String yagStr = String.valueOf(yagMiktari);
+                String kaloriStr = String.valueOf(Math.floor(KaloriMiktari));
+                String karbonhidratStr = String.valueOf(Math.floor(karbonhidratMiktari));
+                String proteinStr = String.valueOf(Math.floor(proteinMiktari));
+                String yagStr = String.valueOf(Math.floor(yagMiktari));
                 String suStr = String.valueOf(suMiktari);
-                String str = String.valueOf(kiloAlmak);
+                //String str = String.valueOf(Math.floor(kiloAlmak));
 
-                su_bari.setText(suStr);
-                yag_bari.setText(yagStr);
-                protein_bari.setText(proteinStr);
-                karbonhidrat_bari.setText(karbonhidratStr);
-                kalori_bari.setText(kaloriStr);
+                su_bari.setText(suStr + " litre");
+                yag_bari.setText(yagStr + " gram");
+                protein_bari.setText(proteinStr+ " gram");
+                karbonhidrat_bari.setText(karbonhidratStr + " gram");
+                kalori_bari.setText(kaloriStr + " kalori");
                 //yag.setText(girilenYas+ "  "+ girilenErkek);
 
                 KaloriMiktari = 0;
