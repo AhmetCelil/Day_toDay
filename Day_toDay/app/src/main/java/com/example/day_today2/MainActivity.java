@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 if(emailText.getText().toString().trim().length() > 0 && passwordText.getText().toString().trim().length() > 0){
                     Toast.makeText(getApplicationContext(),"Giris Yapıldı",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this , GenelBilgiler.class));
+
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Lütfen bilgilerinizi giriniz!",Toast.LENGTH_LONG).show();
