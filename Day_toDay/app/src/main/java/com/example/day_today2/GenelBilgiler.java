@@ -17,8 +17,6 @@ public class GenelBilgiler extends AppCompatActivity {
         setContentView(R.layout.activity_genel_bilgiler);
         hesapla = findViewById(R.id.besin_hesapla);
 
-
-
 // alınacak inputlar
         EditText yas = findViewById(R.id.girilen_yas);
         EditText boy = findViewById(R.id.girilen_boy);
@@ -50,7 +48,6 @@ public class GenelBilgiler extends AppCompatActivity {
         final EditText su = findViewById(R.id.su_bari);
         final EditText yag = findViewById(R.id.yag_bari);
 */
-
         hesapla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
