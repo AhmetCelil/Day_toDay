@@ -1,20 +1,20 @@
 package com.example.day_today2;
 
 public class Kullanici {
-    String isim, soyIsim, kullaniciAdi, mail, telefon;
+    String isim, soyIsim, telefon, email, sifre;
     // protected static int kullaniciSayisi = 0;
 
-    Kullanici(String isim, String soyIsim, String kullaniciAdi, String mail, String telefon){
+    public Kullanici(String isim, String soyIsim, String telefon, String email, String sifre, String uyelikTip){
         this.isim = isim;
         this.soyIsim = soyIsim;
-        this.kullaniciAdi = kullaniciAdi;
-        this.mail = mail;
         this.telefon = telefon;
+        this.email = email;
+        this.sifre = sifre;
 
-        //kullaniciSayisi += 1;
-        //System.out.println(isim);
     }
 
     public Kullanici() {
+
     }
+
 }

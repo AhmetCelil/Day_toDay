@@ -108,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
