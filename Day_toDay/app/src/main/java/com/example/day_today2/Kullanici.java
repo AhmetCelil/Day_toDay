@@ -11,6 +11,8 @@ public class Kullanici {
         setEmail(email);
         setSifre(sifre);
         setUyelikTipi(uyelikTipi);
+        kullaniciSayisi++;
+        System.out.println(kullaniciSayisi);
     }
 
     public Kullanici() {
