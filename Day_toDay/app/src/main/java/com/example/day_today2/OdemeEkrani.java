@@ -47,6 +47,8 @@ public class OdemeEkrani extends AppCompatActivity {
                 user.put("telefon", KayitEkrani.kayitEdilenKullanici.telefon);
                 user.put("email", KayitEkrani.kayitEdilenKullanici.email);
                 user.put("sifre", KayitEkrani.kayitEdilenKullanici.sifre);
+                user.put("uyelikTipi", KayitEkrani.kayitEdilenKullanici.uyelikTipi);
+
 
                 firestore.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

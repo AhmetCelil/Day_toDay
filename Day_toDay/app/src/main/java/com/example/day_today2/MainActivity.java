@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +23,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
-public class MainActivity extends AppCompatActivity{
-
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity{
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(emailText.getText().toString().trim().length() > 0 && passwordText.getText().toString().trim().length() > 0){
+                if (emailText.getText().toString().trim().length() > 0 && passwordText.getText().toString().trim().length() > 0) {
 
                     firestore.collection("users")
                             .whereEqualTo("email", emailText.getText().toString())
@@ -48,31 +48,35 @@ public class MainActivity extends AppCompatActivity{
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                    if(task.isSuccessful()){
+                                    if (task.isSuccessful()) {
 
-                                        for(QueryDocumentSnapshot document : task.getResult()){
+                                        for (QueryDocumentSnapshot document : task.getResult()) {
                                             String sifre = document.get("sifre").toString();
+                                            String uyelikTipi = document.get("uyelikTipi").toString();
 
-                                            if(sifre.equals(passwordText.getText().toString())){
-                                                startActivity(new Intent(MainActivity.this , GenelBilgiler.class));
-                                            }
-                                            else{
-                                                Toast.makeText(getApplicationContext(),"Lütfen bilgilerinizi doğru giriniz!",Toast.LENGTH_LONG).show();
+                                            if (sifre.equals(passwordText.getText().toString())) {
+
+                                                if (uyelikTipi.equals("trainer")) {
+                                                    startActivity(new Intent(MainActivity.this, AdminEkrani.class));
+                                                } else {
+                                                    startActivity(new Intent(MainActivity.this, GenelBilgiler.class));
+                                                }
+                                            } else {
+                                                Toast.makeText(getApplicationContext(), "Lütfen bilgilerinizi doğru giriniz!", Toast.LENGTH_LONG).show();
                                             }
                                         }
                                     }
                                 }
                             });
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Lütfen bilgilerinizi giriniz!",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Lütfen bilgilerinizi giriniz!", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this , KayitEkrani.class));
+                startActivity(new Intent(MainActivity.this, KayitEkrani.class));
             }
         });
 

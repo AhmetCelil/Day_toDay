@@ -1,15 +1,16 @@
 package com.example.day_today2;
 
 public class Kullanici {
-    String isim, soyIsim, telefon, email, sifre;
+    String isim, soyIsim, telefon, email, sifre, uyelikTipi;
     protected static int kullaniciSayisi = 0;
 
-    public Kullanici(String isim, String soyIsim, String telefon, String email, String sifre, String platin){
+    public Kullanici(String isim, String soyIsim, String telefon, String email, String sifre, String uyelikTipi){
         setIsim(isim);
         setSoyIsim(soyIsim);
         setTelefon(telefon);
         setEmail(email);
-        setSifre(email);
+        setSifre(sifre);
+        setUyelikTipi(uyelikTipi);
     }
 
     public Kullanici() {
@@ -54,6 +55,14 @@ public class Kullanici {
 
     public void setSifre(String sifre) {
         this.sifre = sifre;
+    }
+
+    public String getUyelikTipi() {
+        return uyelikTipi;
+    }
+
+    public void setUyelikTipi(String uyelikTipi) {
+        this.uyelikTipi = uyelikTipi;
     }
 
     public static int getKullaniciSayisi() {
