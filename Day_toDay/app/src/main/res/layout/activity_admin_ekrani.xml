@@ -72,12 +72,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.098" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sporcuBilgilerButon"
-        android:layout_width="197dp"
-        android:layout_height="59dp"
+        android:layout_width="236dp"
+        android:layout_height="54dp"
+        android:background="@drawable/rounded_rectangle"
         android:text="Sporcu Bilgilerini Getir"
-        android:theme="@style/Theme.Material3.DynamicColors.Dark"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,8 +94,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/besin_hesapla"
-        app:layout_constraintVertical_bias="0.059" />
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
