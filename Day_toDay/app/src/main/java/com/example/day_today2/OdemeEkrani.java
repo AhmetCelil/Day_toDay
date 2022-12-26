@@ -32,7 +32,7 @@ public class OdemeEkrani extends AppCompatActivity {
         TextView ucretText = findViewById(R.id.ucretText);
         Button odemeTamamlaButon = findViewById(R.id.odemeTamamlaButton);
 
-        ucretText.setText("Ödenecek Tutar " + KayitEkrani.kayitEdilenKullanici.ucretBelirle());
+        ucretText.setText("Ödenecek Tutar " + KayitEkrani.ucret);
 
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 

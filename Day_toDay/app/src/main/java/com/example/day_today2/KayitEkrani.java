@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 public class KayitEkrani extends AppCompatActivity {
 
-   // public static String ucret;
-    public static Musteri kayitEdilenKullanici = new Musteri();
+    public static String ucret;
+    public static Kullanici kayitEdilenKullanici = new Kullanici();
 
 
     @Override
@@ -72,18 +72,17 @@ public class KayitEkrani extends AppCompatActivity {
                 if (isimText.getText().toString().trim().length() > 0 && soyisimText.getText().toString().trim().length() > 0 && emailText.getText().toString().trim().length() > 0 && telefonText.getText().toString().trim().length() > 0) {
 
                     if (platinRadio.isChecked()) {
-                        kayitEdilenKullanici = new PlatinUye(isimText.getText().toString(), soyisimText.getText().toString(), telefonText.getText().toString(), emailText.getText().toString(), sifreText.getText().toString(), "ayberk", 1500, "platin uye");
+                        ucret = "1500";
+                        kayitEdilenKullanici = new Kullanici(isimText.getText().toString(), soyisimText.getText().toString(), telefonText.getText().toString(), emailText.getText().toString(), sifreText.getText().toString(), "platin");
                         startActivity(new Intent(KayitEkrani.this, OdemeEkrani.class));
                     } else if (goldRadio.isChecked()) {
-                       // ucret = "1000";
-                        kayitEdilenKullanici = new GoldUye(isimText.getText().toString(), soyisimText.getText().toString(), telefonText.getText().toString(), emailText.getText().toString(), sifreText.getText().toString(), "hafta içi", 1000, "gold uye");
+                        ucret = "1000";
+                        kayitEdilenKullanici = new Kullanici(isimText.getText().toString(), soyisimText.getText().toString(), telefonText.getText().toString(), emailText.getText().toString(), sifreText.getText().toString(), "gold");
                         startActivity(new Intent(KayitEkrani.this, OdemeEkrani.class));
-
-                    } else if (ozelRadio.isChecked() && tckimlikText.getText().toString().trim().length() == 11) {
-                        //ucret = "Ücretsiz";
-                        kayitEdilenKullanici = new OzelUye(isimText.getText().toString(), soyisimText.getText().toString(), telefonText.getText().toString(), emailText.getText().toString(), sifreText.getText().toString(), 0 , "ozel uye");
+                    } else if (ozelRadio.isChecked() && tckimlikText.getText().toString().trim().length() > 0) {
+                        ucret = "Ücretsiz";
+                        kayitEdilenKullanici = new Kullanici(isimText.getText().toString(), soyisimText.getText().toString(), telefonText.getText().toString(), emailText.getText().toString(), sifreText.getText().toString(), "ozel");
                         startActivity(new Intent(KayitEkrani.this, OdemeEkrani.class));
-
                     }
 
                 } else {
